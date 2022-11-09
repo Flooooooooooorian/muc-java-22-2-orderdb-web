@@ -79,7 +79,7 @@ class ShopControllerIntegrationTest {
     }
 
     @Test
-    void addProduct_Should() throws Exception {
+    void addProduct_ShouldReturnCreatedProduct() throws Exception {
         mockMvc.perform(post("/shop/products")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
