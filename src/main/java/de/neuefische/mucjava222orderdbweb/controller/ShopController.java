@@ -21,15 +21,27 @@ public class ShopController {
 
     private ShopService shopService;
 
+    // Dependency Injection = Wofür genau?
+    /*
+    * Gibt Verantwortung an Spring ab
+    * + Weniger Code schreiben
+    *
+    * Wir verwenden keine leeren Konstruktoren
+    * -> Spring verknüpft unsere Abhängigkeiten automatisch
+    *
+    * -> Testen wird einfacher
+    * */
     public ShopController(ShopService shopService) {
         this.shopService = shopService;
     }
 
+    // Das ist ein Endpunkt
     @GetMapping("products")
     public List<Product> getAllProducts() {
         return shopService.listProducts();
     }
 
+    // Das ist ein Endpunkt
     @GetMapping("orders")
     public List<Order> getAllOrders() {
         return shopService.listOrders();
