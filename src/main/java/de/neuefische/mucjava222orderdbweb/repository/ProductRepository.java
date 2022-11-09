@@ -26,4 +26,9 @@ public class ProductRepository {
         }
         return null;
     }
+
+    public Product add(Product product) {
+        products.add(product);
+        return product;
+    }
 }
